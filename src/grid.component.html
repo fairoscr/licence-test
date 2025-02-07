@@ -1,0 +1,39 @@
+<div id="gridContainer">
+  <div id="controls" class="controls"><button id="export" (click)="exportPDF()">Export</button></div>
+  <div id="grid1Container" class="gridContainer">
+    <dx-data-grid
+      #grid1
+      [dataSource]="employeeData"
+      [columnAutoWidth]="true"
+      [showColumnLines]="true"
+      [showRowLines]="true"
+      [showBorders]="true"
+      width="80vw">
+      @for(column of employeeColumns; track column.id) {
+      <dxi-column [dataField]="column.dataField">
+        @if(column.type === 'number') {
+        <dxo-format type="fixedPoint" [precision]="2"></dxo-format>
+        }
+      </dxi-column>
+      }
+    </dx-data-grid>
+  </div>
+  <div id="grid2Container" class="gridContainer">
+    <dx-data-grid
+      #grid2
+      [dataSource]="customerData"
+      [columnAutoWidth]="true"
+      [showColumnLines]="true"
+      [showRowLines]="true"
+      [showBorders]="true"
+      width="80vw">
+      @for(column of customerColumns; track column.id) {
+      <dxi-column [dataField]="column.dataField">
+        @if(column.type === 'number') {
+        <dxo-format type="fixedPoint" [precision]="2"></dxo-format>
+        }
+      </dxi-column>
+      }
+    </dx-data-grid>
+  </div>
+</div>
