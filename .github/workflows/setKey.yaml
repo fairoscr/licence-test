@@ -1,8 +1,4 @@
-on: 
- deployment
-jobs:
- deploy:
-    runs-on: ubuntu-latest
-    env: 
-      DEVEXTREME_KEY: ${{ secrets.DevExtremeKey }} 
-
+jobs: 
+    publishing: 
+        env: 
+            DEVEXTREME_KEY: ${{ secrets.DevExtremeKey }}
