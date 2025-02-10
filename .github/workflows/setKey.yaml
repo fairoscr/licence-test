@@ -1,4 +1,4 @@
 jobs: 
-    publishing: 
+    publishing:
         env: 
             DEVEXTREME_KEY: ${{ secrets.DevExtremeKey }}
